@@ -19,11 +19,11 @@ public class WordReferenceTest extends WordReferenceBase{
 		
 
 		wrHomePage.search(searchTerm1);
-
-		wrDefinitionPage.wrReverse();
-		wrDefinitionPage.SearchList();
+		wrDefinitionPage.wrReverse();		
+		wrDefinitionPage.SearchList(Integer.parseInt(numberOfElementToSearch1));
 		wrDefinitionPage.search(searchTerm2);
 		wrDefinitionPage.wrReverse();
-		wrDefinitionPage.SearchList();
+		wrDefinitionPage.SearchList(Integer.parseInt(numberOfElementToSearch2));
+		
 	}
 }

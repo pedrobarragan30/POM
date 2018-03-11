@@ -21,7 +21,6 @@ public class WordReferenceBase {
 	public void setUp(String urlToOpen, String browserToUse) {
 		switch(browserToUse) {
 		case "chrome":
-			System.out.println("Arranca el browser " + browserToUse + " y navega a la pagina: " + urlToOpen);
 			//System.setProperty("webdriver.chrome.driver", "C:\\test_automation\\drivers\\chromedriver.exe");
 
 			ChromeOptions options = new ChromeOptions();
@@ -32,19 +31,16 @@ public class WordReferenceBase {
 			driver = new ChromeDriver(options);
 		   break;
 		case "firefox":
-			System.out.println("Arranca el browser " + browserToUse + " y navega a la pagina: " + urlToOpen);
 			//System.setProperty("webdriver.gecko.driver", "C:\\test_automation\\drivers\\geckodriver.exe");
 			
 			driver = new FirefoxDriver();
 			break;
 		case "edge":
-			System.out.println("Arranca el browser " + browserToUse + " y navega a la pagina: " + urlToOpen);
 			//System.setProperty("webdriver.edge.driver, "C:\\test_automation\\drivers\\geckodriver.exe");
 			
 			driver = new EdgeDriver();
 			break;
 		//case "IE":
-		//	System.out.println("Arranca el browser " + browserToUse + " y navega a la pagina: " + urlToOpen);
 			//System.setProperty("webdriver.ie.driver", "C:\\test_automation\\drivers\\geckodriver.exe");
 		//	
 		//	driver = new InternetExplorerDriver();
@@ -62,7 +58,6 @@ public class WordReferenceBase {
 	
 	@After
 	public void tearDown() throws Exception {
-		System.out.println("tearDown");
-		//driver.quit();
+		driver.quit();
 	}
 }
