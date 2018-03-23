@@ -3,7 +3,6 @@ package pomIMDB.test;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -14,8 +13,6 @@ import pomIMDB.pages.CastPage;
 import pomIMDB.pages.FindPage;
 import pomIMDB.pages.HomePage;
 import pomIMDB.pages.TitlePage;
-import pomWR.pages.DefinitionPage;
-
 
 public class IMDBBase {
 	
@@ -25,8 +22,8 @@ public class IMDBBase {
 	protected TitlePage imdbTitlePage;
 	protected CastPage imdbCastPage;
 	
-	@Before
-	public void setUp(String urlToOpen, String browserToUse) throws Exception {
+	
+	public void setUp(String urlToOpen, String browserToUse) {
 		switch(browserToUse) {
 		case "chrome":
 			//System.setProperty("webdriver.chrome.driver", "C:\\test_automation\\drivers\\chromedriver.exe");
@@ -60,8 +57,10 @@ public class IMDBBase {
 		driver.get(urlToOpen);
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
-
-
+		imdbHomePage = new HomePage(driver);
+		imdbFindPage = new FindPage(driver);
+		imdbTitlePage = new TitlePage(driver);
+		imdbCastPage = new CastPage(driver);
 	}
 
 	@After
