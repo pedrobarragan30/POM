@@ -1,8 +1,10 @@
 package pomIMDB.pages;
 
+import org.openqa.selenium.WebDriver;
+
 public class CastPage {
 
-	public CastPage() {
+	public CastPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
 	}
 
