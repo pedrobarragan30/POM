@@ -20,14 +20,14 @@ public class TitlePage {
 		WebElement pageTitle = waitTitlePage.until(ExpectedConditions.presenceOfElementLocated(By.className("title_wrapper")));
 		
 		if(pageTitle.getText().contains(sequelName) && pageTitle.getText().contains(movieYear)) {
-			System.out.println("El titulo de la pelicula tiene el titulo de " + sequelName + " y fue exhibida en el año " + movieYear);
+			System.out.println("TITLE PAGE: El titulo de la pelicula es " + sequelName + " y fue exhibida en el año " + movieYear);
 		}
-
 	}
 
-	public void openCast() {
-		// TODO Auto-generated method stub
+	public void openCast(String fullCastLink) {
+		WebElement fullCast = waitTitlePage.until(ExpectedConditions.presenceOfElementLocated(By.linkText(fullCastLink)));
+		waitTitlePage.until(ExpectedConditions.elementToBeClickable(By.linkText(fullCastLink)));
 		
+		fullCast.click();
 	}
-
 }

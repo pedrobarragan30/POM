@@ -17,15 +17,14 @@ public class FindPage {
 		waitFindPage = new WebDriverWait(driver,15);
 	}
 
-	public void moreMatches(String linkName) {
-		WebElement linkToClick = waitFindPage.until(ExpectedConditions.presenceOfElementLocated(By.linkText(linkName)));
+	public void moreMatches(String moreMatchesLink) {
+		WebElement linkToClick = waitFindPage.until(ExpectedConditions.presenceOfElementLocated(By.linkText(moreMatchesLink)));
 		linkToClick.click();
 	}
 
 	public void locateAndOpen(String sequelName, String movieYear) {
 		waitFindPage.until(ExpectedConditions.presenceOfElementLocated(By.className("findHeader")));
 		
-		//List <WebElement> moviesList = driver.findElements(By.className("findResult"));
 		List <WebElement> moviesList = waitFindPage.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.className("findResult")));
 		
 		WebElement correctElement = null;
