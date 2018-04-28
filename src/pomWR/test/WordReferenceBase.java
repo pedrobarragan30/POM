@@ -40,11 +40,11 @@ public class WordReferenceBase {
 			
 			driver = new EdgeDriver();
 			break;
-		//case "IE":
-			//System.setProperty("webdriver.ie.driver", "C:\\test_automation\\drivers\\geckodriver.exe");
-		//	
-		//	driver = new InternetExplorerDriver();
-		//	break;
+/*		case "IE":
+			System.setProperty("webdriver.ie.driver", "C:\\test_automation\\drivers\\geckodriver.exe");
+			
+			driver = new InternetExplorerDriver();
+			break;*/
 		default:
 			System.out.println("The Browser " + browserToUse + " is NOT supported");
 		}
